@@ -3,5 +3,5 @@ interface Props {
 }
 
 export default function Container({ children }: Props) {
-  return <div className="relative px-5">{children}</div>;
+  return <div className="relative">{children}</div>;
 }

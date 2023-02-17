@@ -7,7 +7,11 @@ module.exports = {
         sans: ["Roboto", "sans-serif"],
       },
       fontSize: {
-        sm: ["14px", "24px"],
+        xs: ["14px", "24px"],
+        sm: ["16px", "160%"],
+        md: ["20px", "140%"],
+        lg: ["32px", "140%"],
+        xl: ["48px", "125%"],
       },
       colors: {
         red: "#E45858",

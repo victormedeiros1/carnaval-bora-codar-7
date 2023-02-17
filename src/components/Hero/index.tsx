@@ -2,7 +2,7 @@ import Search from "../Search";
 
 export default function Hero() {
   return (
-    <main className="h-[33.25rem] bg-[#F8F8FF] flex flex-col justify-center items-center gap-10">
+    <main className="relative h-[33.25rem] bg-[#F8F8FF] flex flex-col justify-center items-center gap-10 px-5">
       <img
         className="absolute top-0 left-0 z-0"
         src="/src/assets/images/ilu-1.svg"
@@ -14,8 +14,10 @@ export default function Hero() {
         alt="ilustration-2"
       />
       <header className="flex flex-col text-center gap-[1.125rem] z-10">
-        <h2 className="text-lg font-medium text-red">FIND YOUR BLOCK</h2>
-        <h1 className="text-5xl font-bold text-center">
+        <h2 className="text-sm tracking-[10%] font-medium text-red">
+          FIND YOUR BLOCK
+        </h2>
+        <h1 className="text-xl font-bold text-center">
           Encontre os <span className="text-purple">melhores blocos</span>
           <br /> de carnaval de 2023
         </h1>
