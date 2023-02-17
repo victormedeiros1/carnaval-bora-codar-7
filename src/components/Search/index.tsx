@@ -3,7 +3,7 @@ import Button from "../Button";
 
 export default function Search() {
   return (
-    <div className="bg-white flex gap-6 p-10 z-10">
+    <div className="bg-white border border-[#EAEAEA] rounded-[10px]  flex gap-6  p-10 z-10">
       <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded">
         <MapPinIcon className="h-6 w-6 text-red m-3.5 my-auto" />
         <input
