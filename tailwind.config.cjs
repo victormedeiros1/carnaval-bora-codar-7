@@ -13,6 +13,9 @@ module.exports = {
         lg: ["32px", "140%"],
         xl: ["48px", "125%"],
       },
+      borderRadius: {
+        10: "0.625rem",
+      },
       colors: {
         red: "#E45858",
         purple: "#6246EA",
