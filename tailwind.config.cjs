@@ -13,7 +13,7 @@ module.exports = {
         red: "#E45858",
         purple: "#6246EA",
       },
-      width: {
+      maxWidth: {
         348: "21.75rem",
       },
     },
