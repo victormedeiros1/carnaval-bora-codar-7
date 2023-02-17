@@ -1,8 +1,11 @@
+import Container from "./components/Container";
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <div>
-      <h1>Teste</h1>
-    </div>
+    <Container>
+      <Hero />
+    </Container>
   );
 }
 
