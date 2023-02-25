@@ -1,13 +1,45 @@
 import { MagnifyingGlassIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import Button from "../Button";
 
+import { useBlocks } from "../../hooks/useBlocks";
+
+const locations = [
+  {
+    id: 0,
+    name: "Caicó - RN",
+  },
+  {
+    id: 1,
+    name: "Natal - RN",
+  },
+  {
+    id: 2,
+    name: "Salvador - BA",
+  },
+  {
+    id: 3,
+    name: "Péssimo - MC",
+  },
+];
+
 export default function Search() {
+  const { blocks, setBlocks } = useBlocks();
+
+  const handleTextField = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const text = e.target.value;
+    const filteredBlocks = blocks.filter((block) => block.name.includes(text));
+
+    setBlocks(filteredBlocks);
+  };
+
   return (
     <div className="z-10 w-full max-w-[62rem] bg-white border border-[#EAEAEA] rounded-[10px] flex gap-6 p-10">
       <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded">
-        <MapPinIcon className="h-6 w-6 text-red m-3.5 my-auto" />
+        <MagnifyingGlassIcon className="h-6 w-6 text-red mx-3.5 my-auto" />
+
         <input
-          className="w-full text-gray-00 bg-transparent px-3.5 py-3"
+          onChange={handleTextField}
+          className="w-full text-gray-700 bg-transparent px-3.5 py-3"
           type="text"
           placeholder="Pesquisar por nome"
           aria-placeholder="Pesquisar por nome"
@@ -15,14 +47,17 @@ export default function Search() {
       </div>
 
       <div className="w-full max-w-348 bg-[#F4F4FF] flex rounded">
-        <MagnifyingGlassIcon className="h-6 w-6 text-red mx-3.5 my-auto" />
+        <MapPinIcon className="h-6 w-6 text-red m-3.5 my-auto" />
+
         <select
           className="w-full text-gray-700 bg-transparent px-3.5 py-3"
           name="cities"
         >
-          <option value="Bloco 1">Bloco 1</option>
-          <option value="Bloco 2">Bloco 2</option>
-          <option value="Bloco 3">Bloco 3</option>
+          {locations.map(({ id, name }) => (
+            <option key={id} value={name}>
+              {name}
+            </option>
+          ))}
         </select>
       </div>
 

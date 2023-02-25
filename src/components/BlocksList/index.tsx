@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useBlocks } from "../../hooks/useBlocks";
 import Block from "./components/Block";
-import { Block as BlockTypes } from "../../types/block";
 
 const url =
   "http://bora-codar-challenge-7-backend-production.up.railway.app/blocks";
 
 export default function BlocksList() {
-  const [blocks, setBlocks] = useState<BlockTypes[]>([]);
+  const { blocks, setBlocks } = useBlocks();
 
   useEffect(() => {
     fetch(url)
