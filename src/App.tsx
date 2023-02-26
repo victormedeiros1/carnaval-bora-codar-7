@@ -3,16 +3,19 @@ import Container from "./components/Container";
 import Hero from "./components/Hero";
 import BlocksContextProvider from "./contexts/blocksContext";
 import FilteredBlocksContextProvider from "./contexts/filteredBlocksContext";
+import VisibleBlocksContextProvider from "./contexts/visibleBlocksContext";
 
 function App() {
   return (
     <BlocksContextProvider>
-      <FilteredBlocksContextProvider>
-        <Container>
-          <Hero />
-          <BlocksList />
-        </Container>
-      </FilteredBlocksContextProvider>
+      <VisibleBlocksContextProvider>
+        <FilteredBlocksContextProvider>
+          <Container>
+            <Hero />
+            <BlocksList />
+          </Container>
+        </FilteredBlocksContextProvider>
+      </VisibleBlocksContextProvider>
     </BlocksContextProvider>
   );
 }

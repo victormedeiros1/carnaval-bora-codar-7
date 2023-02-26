@@ -3,6 +3,7 @@ import Button from "../Button";
 
 import { useBlocks } from "../../hooks/useBlocks";
 import { useFilteredBlocks } from "../../hooks/useFilteredBlocks";
+import { useVisibleBlocks } from "../../hooks/useVisibleBlocks";
 
 const locations = [
   {
@@ -26,14 +27,24 @@ const locations = [
 export default function Search() {
   const { blocks } = useBlocks();
   const { setFilteredBlocks } = useFilteredBlocks();
+  const { setVisibleBlocks } = useVisibleBlocks();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const text = e.target.ele;
-    const filteredBlocks = blocks.filter((block) => block.name.includes(text));
+    const text = e.target.elements.text.value;
+    const location = e.target.elements.locations.value;
+    const filteredBlocks = blocks.filter(
+      (block) => block.name.includes(text) && block.location.includes(location)
+    );
 
-    setFilteredBlocks(filteredBlocks);
-    console.log("FILTERED BLOCKS", filteredBlocks);
+    if (filteredBlocks.length > 0) {
+      setVisibleBlocks(filteredBlocks);
+    } else {
+      setVisibleBlocks([]);
+    }
+
+    console.log("TEXT |", text);
+    console.log("LOCATION |", location);
   };
 
   return (
@@ -50,13 +61,14 @@ export default function Search() {
           />
         </div>
 
-        <div className="w-full max-w-348 bg-[#F4F4FF] flex rounded">
+        <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded">
           <MapPinIcon className="h-6 w-6 text-red m-3.5 my-auto" />
 
           <select
             className="w-full text-gray-700 bg-transparent px-3.5 py-3"
             name="locations"
           >
+            <option value="">Qualquer lugar</option>
             {locations.map(({ id, name }) => (
               <option key={id} value={name}>
                 {name}
