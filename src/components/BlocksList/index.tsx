@@ -38,7 +38,7 @@ const blocksArray = [
   },
 ];
 export default function BlocksList() {
-  const { blocks, setBlocks } = useBlocks();
+  const { setBlocks } = useBlocks();
   const { visibleBlocks } = useVisibleBlocks();
 
   // API
@@ -55,13 +55,13 @@ export default function BlocksList() {
   });
 
   return (
-    <section className="max-w-[78.5rem] mx-auto my-0 p">
-      <header className="mb-10 mt-24">
+    <section className="max-w-[78.5rem] mx-auto my-24 px-5">
+      <header className="mb-10">
         <h3 className="text-lg font-bold">Blocos recomendados</h3>
       </header>
-      <div className="grid grid-cols-3 gap-8">
-        {visibleBlocks.length > 0 ? (
-          visibleBlocks?.map(({ id, name, description, cover, location }) => (
+      {visibleBlocks.length > 0 ? (
+        visibleBlocks?.map(({ id, name, description, cover, location }) => (
+          <div className="grid grid-cols-3 gap-8">
             <Block
               key={id}
               name={name}
@@ -69,11 +69,14 @@ export default function BlocksList() {
               description={description}
               location={location}
             />
-          ))
-        ) : (
-          <div>Nenhum bloco encontrado</div>
-        )}
-      </div>
+          </div>
+        ))
+      ) : (
+        <div className="w-full flex items-center flex-col">
+          <img className="w-96 mx-auto" src="/src/assets/images/404.svg" />
+          <h2 className="text-lg font-bold mt-4">Nenhum bloco encontrado</h2>
+        </div>
+      )}
     </section>
   );
 }

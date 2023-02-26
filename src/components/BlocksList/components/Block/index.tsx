@@ -1,3 +1,5 @@
+import { MapPinIcon } from "@heroicons/react/24/outline";
+
 interface Props {
   name: string;
   cover: string;
@@ -18,7 +20,10 @@ export default function Block({ name, description, cover, location }: Props) {
       <div className="flex flex-col gap-4 p-4">
         <h3 className="text-md font-bold">{name}</h3>
         <h4 className="text-sm">{description}</h4>
-        <h5 className="text-sm">{location}</h5>
+        <div className="flex">
+          <MapPinIcon className="h-6 w-6 text-red mr-2 " />
+          <h5 className="text-sm">{location}</h5>
+        </div>
       </div>
     </article>
   );
