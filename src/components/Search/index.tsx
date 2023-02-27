@@ -1,38 +1,18 @@
 import { MagnifyingGlassIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import Button from "../Button";
-
 import { useBlocks } from "../../hooks/useBlocks";
-import { useFilteredBlocks } from "../../hooks/useFilteredBlocks";
 import { useVisibleBlocks } from "../../hooks/useVisibleBlocks";
-
-const locations = [
-  {
-    id: 0,
-    name: "Caicó - RN",
-  },
-  {
-    id: 1,
-    name: "Natal - RN",
-  },
-  {
-    id: 2,
-    name: "Salvador - BA",
-  },
-  {
-    id: 3,
-    name: "Péssimo - MC",
-  },
-];
+import { locationOptions } from "../../helpers/slugs";
+import Button from "../Button";
 
 export default function Search() {
   const { blocks } = useBlocks();
-  const { setFilteredBlocks } = useFilteredBlocks();
   const { setVisibleBlocks } = useVisibleBlocks();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const text = e.target.elements.text.value;
     const location = e.target.elements.locations.value;
+
     const filteredBlocks = blocks.filter(
       (block) => block.name.includes(text) && block.location.includes(location)
     );
@@ -42,9 +22,6 @@ export default function Search() {
     } else {
       setVisibleBlocks([]);
     }
-
-    console.log("TEXT |", text);
-    console.log("LOCATION |", location);
   };
 
   return (
@@ -69,7 +46,7 @@ export default function Search() {
             name="locations"
           >
             <option value="">Qualquer lugar</option>
-            {locations.map(({ id, name }) => (
+            {locationOptions.map(({ id, name }) => (
               <option key={id} value={name}>
                 {name}
               </option>

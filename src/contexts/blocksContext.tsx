@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { Block } from "../types/block";
+import { blockOptions } from "../helpers/slugs";
 
 interface Props {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ interface BlocksContextData {
 export const BlocksContext = createContext({} as BlocksContextData);
 
 export default function BlocksContextProvider({ children }: Props) {
-  const [blocks, setBlocks] = useState<Block[]>([]);
+  const [blocks, setBlocks] = useState<Block[]>(blockOptions);
 
   return (
     <BlocksContext.Provider value={{ blocks, setBlocks }}>
