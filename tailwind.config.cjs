@@ -23,6 +23,10 @@ module.exports = {
       maxWidth: {
         348: "21.75rem",
       },
+      screens: {
+        mobile: { max: "768px" },
+        mobilexs: { max: "388px" },
+      },
     },
   },
   plugins: [],
