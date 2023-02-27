@@ -2,4 +2,4 @@
 
 ## Rocketseat's seventh challenge consisted of an application to search for carnival blocks.
 
-# Live https://boracodar-challenge-7-josevictordev.netlify.app/
+Live https://boracodar-challenge-7-josevictordev.netlify.app/
