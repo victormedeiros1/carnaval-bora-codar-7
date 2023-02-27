@@ -34,7 +34,7 @@ export default function Search() {
             className="w-full text-gray-700 bg-transparent px-3.5 py-3"
             type="text"
             name="text"
-            placeholder="Pesquisar por nome"
+            placeholder="Nome"
           />
         </div>
 
