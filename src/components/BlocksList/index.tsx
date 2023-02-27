@@ -16,12 +16,14 @@ export default function BlocksList() {
   // if (!blocks) return <Loading />;
 
   return (
-    <section className="max-w-[78.5rem] mx-auto my-24 px-5">
-      <header className="mb-10">
-        <h3 className="text-lg font-bold">Blocos recomendados</h3>
+    <section className="max-w-[78.5rem] mx-auto my-24 px-5 mobile:my-12">
+      <header className="mb-10 mobile:mb-4">
+        <h3 className="text-lg font-bold mobile:text-md">
+          Blocos recomendados
+        </h3>
       </header>
       {visibleBlocks.length > 0 ? (
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 mobile:gap-2 mobile:grid-cols-2 mobilexs:grid-cols-1">
           {visibleBlocks?.map(({ id, name, description, cover, location }) => (
             <Block
               key={id}
