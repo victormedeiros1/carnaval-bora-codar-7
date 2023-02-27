@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-50 border-t-[1px] flex flex-col gap-2 items-center py-6 pb-5">
-      <span>José Victor Front-end Developer</span>
-      <ul className="flex justify-center gap-8">
+    <footer className="w-full bg-gray-50 border-t-[1px] flex flex-col gap-2 items-center py-6 mobile:py-3">
+      <span className="mobile:text-xs">José Victor Front-end Developer</span>
+      <ul className="flex justify-center gap-8 mobile:text-xs mobile:gap-4">
         <li>
           <a
             className="underline hover:text-purple"
