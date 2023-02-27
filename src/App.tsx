@@ -1,5 +1,6 @@
 import BlocksList from "./components/BlocksList";
 import Container from "./components/Container";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import BlocksContextProvider from "./contexts/blocksContext";
 import FilteredBlocksContextProvider from "./contexts/filteredBlocksContext";
@@ -13,6 +14,7 @@ function App() {
           <Container>
             <Hero />
             <BlocksList />
+            <Footer />
           </Container>
         </FilteredBlocksContextProvider>
       </VisibleBlocksContextProvider>
