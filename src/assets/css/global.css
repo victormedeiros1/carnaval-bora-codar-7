@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero {
+  position: relative;
+}
+.hero::before {
+  width: 25.5rem;
+  height: 21.5rem;
+  content: "";
+  background-image: url("../images/ilu-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hero::after {
+  width: 25.875rem;
+  height: 20.625rem;
+  content: "";
+  background-image: url("../images/ilu-2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero::before {
+    width: 12.25rem;
+    height: 10.75rem;
+  }
+  .hero::after {
+    width: 12.5rem;
+    height: 10.3rem;
+  }
+}
