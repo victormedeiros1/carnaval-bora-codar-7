@@ -25,9 +25,12 @@ export default function Search() {
   };
 
   return (
-    <div className="z-10 w-full max-w-[62rem] bg-white border border-[#EAEAEA] rounded-[10px]  p-10">
-      <form className="flex gap-6" onSubmit={handleSubmit}>
-        <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded">
+    <div className="z-10 w-full max-w-[62rem] bg-white border border-[#EAEAEA] rounded-[10px] p-10 mobile:p-6">
+      <form
+        className="flex gap-6 mobile:flex-col mobile:gap-3"
+        onSubmit={handleSubmit}
+      >
+        <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded mobile:max-w-none">
           <MagnifyingGlassIcon className="h-6 w-6 text-red mx-3.5 my-auto" />
 
           <input
@@ -38,11 +41,11 @@ export default function Search() {
           />
         </div>
 
-        <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded">
+        <div className="w-full max-w-348 flex bg-[#F4F4FF] rounded mobile:max-w-none">
           <MapPinIcon className="h-6 w-6 text-red m-3.5 my-auto" />
 
           <select
-            className="w-full text-gray-700 bg-transparent px-3.5 py-3"
+            className="w-full bg-transparent text-gray-700 px-3.5 py-3"
             name="locations"
           >
             <option value="">Qualquer lugar</option>
