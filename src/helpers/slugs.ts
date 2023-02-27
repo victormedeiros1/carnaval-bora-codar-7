@@ -4,6 +4,8 @@ import block1 from "/src/assets/images/bloco-1.jpg";
 import block2 from "/src/assets/images/bloco-2.jpg";
 import block3 from "/src/assets/images/bloco-3.jpg";
 import block4 from "/src/assets/images/bloco-4.jpg";
+import block5 from "/src/assets/images/bloco-5.jpg";
+import block6 from "/src/assets/images/bloco-6.jpg";
 
 export const blockOptions: Block[] = [
   {
@@ -31,6 +33,20 @@ export const blockOptions: Block[] = [
     id: 3,
     name: "As gata e IML",
     cover: block4,
+    description: "Lorem ipsum dolot sit amet lorem ipsum dolot sit amet",
+    location: "Péssimo - MC",
+  },
+  {
+    id: 4,
+    name: "Amigos do P Érri",
+    cover: block5,
+    description: "Lorem ipsum dolot sit amet lorem ipsum dolot sit amet",
+    location: "Péssimo - MC",
+  },
+  {
+    id: 5,
+    name: "Sou inocente seu NPM",
+    cover: block6,
     description: "Lorem ipsum dolot sit amet lorem ipsum dolot sit amet",
     location: "Péssimo - MC",
   },
