@@ -14,7 +14,9 @@ export default function Search() {
     const location = e.target.elements.locations.value;
 
     const filteredBlocks = blocks.filter(
-      (block) => block.name.includes(text) && block.location.includes(location)
+      (block) =>
+        block.name.toLowerCase().includes(text.toLowerCase()) &&
+        block.location.includes(location)
     );
 
     if (filteredBlocks.length > 0) {
