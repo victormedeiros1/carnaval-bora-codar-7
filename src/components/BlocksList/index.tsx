@@ -1,5 +1,6 @@
 import { useVisibleBlocks } from "../../hooks/useVisibleBlocks";
 import Block from "./components/Block";
+import notfound from "/src/assets/images/not-found.svg";
 
 export default function BlocksList() {
   const { visibleBlocks } = useVisibleBlocks();
@@ -36,7 +37,7 @@ export default function BlocksList() {
         </div>
       ) : (
         <div className="w-full flex items-center flex-col">
-          <img className="w-96 mx-auto" src="/src/assets/images/404.svg" />
+          <img className="w-96 mx-auto" src={notfound} alt="Nada encontrado" />
           <h2 className="text-lg font-bold mt-4">Nenhum bloco encontrado</h2>
         </div>
       )}
