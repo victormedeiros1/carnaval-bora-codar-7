@@ -5,3 +5,7 @@ Rocketseat's seventh challenge consisted of an application to search for carniva
 I used TailwindCSS and ContextAPI + Vite with Typescript.
 
 Live https://boracodar-challenge-7-josevictordev.netlify.app/
+
+## License
+
+This project is licensed from MIT. Learn more by clicking [here](LICENSE).
